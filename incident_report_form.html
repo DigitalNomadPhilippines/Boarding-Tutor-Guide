@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Incident Report Form | Boarding Tutor Reference Guide</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c5282;
+            text-align: center;
+            border-bottom: 2px solid #2c5282;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c5282;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        .form-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"], 
+        input[type="date"],
+        input[type="time"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        textarea {
+            height: 100px;
+        }
+        .checkbox-group {
+            margin-top: 10px;
+        }
+        .checkbox-item {
+            margin-bottom: 5px;
+        }
+        .checkbox-item input {
+            margin-right: 10px;
+        }
+        .instructions {
+            background-color: #e6f7ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2c5282;
+        }
+        .signature-field {
+            margin-top: 20px;
+            border-top: 1px dotted #999;
+            padding-top: 10px;
+        }
+        .date-field {
+            display: inline-block;
+            margin-left: 50px;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #666;
+        }
+        .urgent-notice {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        @media print {
+            body {
+                padding: 0;
+                font-size: 12pt;
+            }
+            .instructions {
+                display: none;
+            }
+            .form-section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+<style>
+        .download-options {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .download-button:hover {
+            transform: translateY(-2px);
+        }
+        .download-button i {
+            margin-right: 8px;
+        }
+        .download-button.pdf {
+            background-color: #f40f02;
+            color: white;
+        }
+        .download-button.pdf:hover {
+            background-color: #d00c01;
+        }
+        .download-button.word {
+            background-color: #2b579a;
+            color: white;
+        }
+        .download-button.word:hover {
+            background-color: #1e3f6f;
+        }
+        </style><script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6423058095388490"></script></head>
+<body>
+<div class="instructions">
+<h3>Incident Report Form Instructions</h3>
+<p>This form should be completed as soon as possible after any significant incident requiring formal documentation. Complete all sections thoroughly and objectively, focusing on factual information.</p>
+<p><strong>Important:</strong> For safeguarding concerns, also complete the school's Safeguarding Concern Form and notify the Designated Safeguarding Lead immediately.</p>
+</div>
+<h1>Incident Report Form</h1>
+<div class="form-section">
+<h2>Incident Details</h2>
+<div class="form-group">
+<label for="incident-date">Date of Incident:</label>
+<input id="incident-date" name="incident-date" type="date"/>
+</div>
+<div class="form-group">
+<label for="incident-time">Time of Incident:</label>
+<input id="incident-time" name="incident-time" type="time"/>
+</div>
+<div class="form-group">
+<label for="incident-location">Location of Incident:</label>
+<input id="incident-location" name="incident-location" placeholder="Be as specific as possible" type="text"/>
+</div>
+<div class="form-group">
+<label for="incident-type">Type of Incident:</label>
+<select id="incident-type" name="incident-type">
+<option value="">Please select</option>
+<option value="behavioral">Behavioral incident</option>
+<option value="injury">Accident or injury</option>
+<option value="property">Property damage</option>
+<option value="security">Security breach</option>
+<option value="health">Health-related incident</option>
+<option value="conflict">Conflict between students</option>
+<option value="bullying">Bullying or harassment</option>
+<option value="missing">Missing student</option>
+<option value="other">Other (please specify below)</option>
+</select>
+</div>
+<div class="form-group">
+<label for="incident-other">If 'Other', please specify:</label>
+<input id="incident-other" name="incident-other" type="text"/>
+</div>
+<div class="form-group">
+<label for="incident-severity">Severity Level:</label>
+<select id="incident-severity" name="incident-severity">
+<option value="">Please select</option>
+<option value="minor">Minor - No injury or minimal disruption</option>
+<option value="moderate">Moderate - Minor injury or significant disruption</option>
+<option value="serious">Serious - Significant injury or major disruption</option>
+<option value="severe">Severe - Severe injury or critical situation</option>
+<option value="critical">Critical - Life-threatening or emergency situation</option>
+</select>
+</div>
+</div>
+<div class="form-section">
+<h2>Individuals Involved</h2>
+<div class="form-group">
+<label for="primary-students">Students Directly Involved:</label>
+<textarea id="primary-students" name="primary-students" placeholder="Full names, year groups, and boarding houses"></textarea>
+</div>
+<div class="form-group">
+<label for="witness-students">Student Witnesses:</label>
+<textarea id="witness-students" name="witness-students" placeholder="Full names, year groups, and boarding houses"></textarea>
+</div>
+<div class="form-group">
+<label for="staff-involved">Staff Members Involved or Present:</label>
+<textarea id="staff-involved" name="staff-involved" placeholder="Full names and roles"></textarea>
+</div>
+<div class="form-group">
+<label for="others-involved">Other Individuals Involved:</label>
+<textarea id="others-involved" name="others-involved" placeholder="Full names and relationship to the school"></textarea>
+</div>
+</div>
+<div class="form-section">
+<h2>Incident Description</h2>
+<div class="form-group">
+<label for="incident-description">Factual Description of What Occurred:</label>
+<textarea id="incident-description" name="incident-description" placeholder="Provide a detailed, objective account of the incident. Include only factual information, not opinions or assumptions."></textarea>
+</div>
+<div class="form-group">
+<label for="lead-up">Events Leading Up to the Incident:</label>
+<textarea id="lead-up" name="lead-up" placeholder="Describe any relevant events or circumstances that preceded the incident"></textarea>
+</div>
+<div class="form-group">
+<label for="contributing-factors">Possible Contributing Factors:</label>
+<textarea id="contributing-factors" name="contributing-factors" placeholder="Note any factors that may have contributed to the incident"></textarea>
+</div>
+</div>
+<div class="form-section">
+<h2>Immediate Response</h2>
+<div class="form-group">
+<label for="immediate-actions">Immediate Actions Taken:</label>
+<textarea id="immediate-actions" name="immediate-actions" placeholder="Detail all actions taken immediately in response to the incident"></textarea>
+</div>
+<div class="form-group">
+<label for="first-aid">First Aid or Medical Attention Provided:</label>
+<textarea id="first-aid" name="first-aid" placeholder="Detail any first aid or medical attention provided, by whom, and when"></textarea>
+</div>
+<div class="form-group">
+<label>Was external emergency assistance required?</label>
+<div class="checkbox-group">
+<div class="checkbox-item">
+<input id="emergency-yes" name="emergency-assistance" type="radio" value="yes"/>
+<label for="emergency-yes">Yes</label>
+</div>
+<div class="checkbox-item">
+<input id="emergency-no" name="emergency-assistance" type="radio" value="no"/>
+<label for="emergency-no">No</label>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label for="emergency-details">If 'Yes', please provide details:</label>
+<textarea id="emergency-details" name="emergency-details" placeholder="Include which services were called, when, by whom, and their response"></textarea>
+</div>
+</div>
+<div class="form-section">
+<h2>Notifications</h2>
+<div class="form-group">
+<label>Were parents/guardians notified?</label>
+<div class="checkbox-group">
+<div class="checkbox-item">
+<input id="parents-yes" name="parents-notified" type="radio" value="yes"/>
+<label for="parents-yes">Yes</label>
+</div>
+<div class="checkbox-item">
+<input id="parents-no" name="parents-notified" type="radio" value="no"/>
+<label for="parents-no">No</label>
+</div>
+<div class="checkbox-item">
+<input id="parents-pending" name="parents-notified" type="radio" value="pending"/>
+<label for="parents-pending">Pending</label>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label for="parent-notification">Parent/Guardian Notification Details:</label>
+<textarea id="parent-notification" name="parent-notification" placeholder="Include who was notified, when, by whom, method of communication, and their response"></textarea>
+</div>
+<div class="form-group">
+<label>School staff notified (check all that apply):</label>
+<div class="checkbox-group">
+<div class="checkbox-item">
+<input id="head-teacher" name="staff-notified" type="checkbox" value="head-teacher"/>
+<label for="head-teacher">Head Teacher/Principal</label>
+</div>
+<div class="checkbox-item">
+<input id="boarding-head" name="staff-notified" type="checkbox" value="boarding-head"/>
+<label for="boarding-head">Head of Boarding</label>
+</div>
+<div class="checkbox-item">
+<input id="houseparent" name="staff-notified" type="checkbox" value="houseparent"/>
+<label for="houseparent">Houseparent/House Master/Mistress</label>
+</div>
+<div class="checkbox-item">
+<input id="dsl" name="staff-notified" type="checkbox" value="dsl"/>
+<label for="dsl">Designated Safeguarding Lead</label>
+</div>
+<div class="checkbox-item">
+<input id="medical" name="staff-notified" type="checkbox" value="medical"/>
+<label for="medical">Medical Staff/School Nurse</label>
+</div>
+<div class="checkbox-item">
+<input id="other-staff" name="staff-notified" type="checkbox" value="other-staff"/>
+<label for="other-staff">Other (please specify below)</label>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label for="other-staff-details">If 'Other', please specify:</label>
+<input id="other-staff-details" name="other-staff-details" type="text"/>
+</div>
+<div class="form-group">
+<label>External authorities notified (check all that apply):</label>
+<div class="checkbox-group">
+<div class="checkbox-item">
+<input id="police" name="authorities-notified" type="checkbox" value="police"/>
+<label for="police">Police</label>
+</div>
+<div class="checkbox-item">
+<input id="social-services" name="authorities-notified" type="checkbox" value="social-services"/>
+<label for="social-services">Social Services</label>
+</div>
+<div class="checkbox-item">
+<input id="local-authority" name="authorities-notified" type="checkbox" value="local-authority"/>
+<label for="local-authority">Local Authority</label>
+</div>
+<div class="checkbox-item">
+<input id="other-authority" name="authorities-notified" type="checkbox" value="other-authority"/>
+<label for="other-authority">Other (please specify below)</label>
+</div>
+<div class="checkbox-item">
+<input id="none" name="authorities-notified" type="checkbox" value="none"/>
+<label for="none">None</label>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label for="other-authority-details">If 'Other', please specify:</label>
+<input id="other-authority-details" name="other-authority-details" type="text"/>
+</div>
+</div>
+<div class="form-section">
+<h2>Follow-up Actions</h2>
+<div class="form-group">
+<label for="follow-up-actions">Follow-up Actions Taken or Planned:</label>
+<textarea id="follow-up-actions" name="follow-up-actions" placeholder="Detail all follow-up actions, including disciplinary measures, support provided, etc."></textarea>
+</div>
+<div class="form-group">
+<label for="responsibilities">Staff Responsibilities for Follow-up:</label>
+<textarea id="responsibilities" name="responsibilities" placeholder="List specific staff members responsible for follow-up actions and their responsibilities"></textarea>
+</div>
+<div class="form-group">
+<label for="timeline">Timeline for Follow-up:</label>
+<textarea id="timeline" name="timeline" placeholder="Provide a timeline for when follow-up actions will be completed"></textarea>
+</div>
+</div>
+<div class="form-section">
+<h2>Additional Information</h2>
+<div class="form-group">
+<label for="additional-info">Additional Relevant Information:</label>
+<textarea id="additional-info" name="additional-info" placeholder="Include any other relevant information not covered in previous sections"></textarea>
+</div>
+<div class="form-group">
+<label for="supporting-documents">Supporting Documents:</label>
+<textarea id="supporting-documents" name="supporting-documents" placeholder="List any supporting documents attached to this report (e.g., photographs, witness statements, medical reports)"></textarea>
+</div>
+</div>
+<div class="form-section">
+<h2>Report Completion</h2>
+<div class="form-group">
+<label for="report-by">Report Completed By:</label>
+<input id="report-by" name="report-by" type="text"/>
+</div>
+<div class="form-group">
+<label for="position">Position:</label>
+<input id="position" name="position" type="text"/>
+</div>
+<div class="form-group">
+<label for="completion-date">Date Completed:</label>
+<input id="completion-date" name="completion-date" type="date"/>
+</div>
+<div class="form-group">
+<label for="signature">Signature:</label>
+<div class="signature-field">
+<p>_______________________________</p>
+</div>
+</div>
+</div>
+<div class="form-section">
+<h2>Review and Verification</h2>
+<div class="form-group">
+<label for="reviewed-by">Report Reviewed By:</label>
+<input id="reviewed-by" name="reviewed-by" type="text"/>
+</div>
+<div class="form-group">
+<label for="reviewer-position">Position:</label>
+<input id="reviewer-position" name="reviewer-position" type="text"/>
+</div>
+<div class="form-group">
+<label for="review-date">Date Reviewed:</label>
+<input id="review-date" name="review-date" type="date"/>
+</div>
+<div class="form-group">
+<label for="reviewer-signature">Signature:</label>
+<div class="signature-field">
+<p>_______________________________</p>
+</div>
+</div>
+</div>
+<div class="urgent-notice">
+<p>For safeguarding concerns, this form must be submitted to the Designated Safeguarding Lead immediately upon completion.</p>
+</div>
+<div class="footer">
+<p>Boarding Tutor Reference Guide | Incident Report Form | Page 1 of 1</p>
+<p>This form should be stored securely in accordance with the school's record-keeping policy.</p>
+</div>
+</body>
+</html>

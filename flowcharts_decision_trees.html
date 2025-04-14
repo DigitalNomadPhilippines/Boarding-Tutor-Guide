@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Flowcharts and Decision Trees | Boarding Tutor Reference Guide</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c5282;
+            text-align: center;
+            border-bottom: 2px solid #2c5282;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c5282;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        .flowchart-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .instructions {
+            background-color: #e6f7ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2c5282;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #666;
+        }
+        .flowchart {
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            background-color: white;
+            margin: 15px 0;
+        }
+        .decision-node {
+            width: 200px;
+            height: 100px;
+            border: 2px solid #2c5282;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 15px auto;
+            padding: 10px;
+            background-color: #e6f7ff;
+            position: relative;
+        }
+        .action-node {
+            width: 200px;
+            height: 60px;
+            border: 2px solid #38a169;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 15px auto;
+            padding: 10px;
+            background-color: #f0fff4;
+            position: relative;
+        }
+        .start-end-node {
+            width: 150px;
+            height: 50px;
+            border: 2px solid #805ad5;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 15px auto;
+            padding: 10px;
+            background-color: #faf5ff;
+            position: relative;
+        }
+        .arrow {
+            position: relative;
+            height: 30px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .arrow::after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #666;
+            position: absolute;
+            bottom: 0;
+        }
+        .arrow-label {
+            position: absolute;
+            right: 55%;
+            top: 0;
+            font-size: 0.8em;
+            color: #666;
+        }
+        .arrow-label.right {
+            left: 55%;
+            right: auto;
+        }
+        .branch {
+            display: flex;
+            justify-content: space-around;
+            margin: 0 auto;
+            position: relative;
+        }
+        .branch-item {
+            flex: 1;
+            max-width: 45%;
+            padding: 10px;
+            position: relative;
+        }
+        .branch::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 20px;
+            background-color: #666;
+        }
+        .branch-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 2px;
+            background-color: #666;
+        }
+        .branch-item:first-child::before {
+            left: 50%;
+            width: 50%;
+        }
+        .branch-item:last-child::before {
+            width: 50%;
+            left: 0;
+        }
+        .notes {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        @media print {
+            body {
+                padding: 0;
+                font-size: 12pt;
+            }
+            .instructions {
+                display: none;
+            }
+            .flowchart-section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+<style>
+        .download-options {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .download-button:hover {
+            transform: translateY(-2px);
+        }
+        .download-button i {
+            margin-right: 8px;
+        }
+        .download-button.pdf {
+            background-color: #f40f02;
+            color: white;
+        }
+        .download-button.pdf:hover {
+            background-color: #d00c01;
+        }
+        .download-button.word {
+            background-color: #2b579a;
+            color: white;
+        }
+        .download-button.word:hover {
+            background-color: #1e3f6f;
+        }
+        </style><script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6423058095388490"></script></head>
+<body>
+<div class="instructions">
+<h3>Flowcharts and Decision Trees Instructions</h3>
+<p>This document provides visual decision-making frameworks for common scenarios faced by boarding tutors. Use these flowcharts to guide your decision-making process in various situations.</p>
+<p><strong>How to use:</strong> Follow the flowcharts step by step, answering questions at decision points to determine the appropriate course of action. These are guidelines and should be used in conjunction with your school's specific policies and procedures.</p>
+</div>
+<h1>Boarding Tutor Decision Trees and Flowcharts</h1>
+<div class="flowchart-section">
+<h2>1. Student Wellbeing Concern Response</h2>
+<p>This flowchart guides boarding tutors through the process of responding to student wellbeing concerns.</p>
+<div class="flowchart">
+<div class="start-end-node">
+<strong>START:</strong> Wellbeing concern identified
+            </div>
+<div class="arrow"></div>
+<div class="decision-node">
+                Is this an emergency requiring immediate medical attention?
+            </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">YES</span>
+</div>
+<div class="action-node">
+                        Call emergency services and inform senior staff immediately
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Provide first aid if trained and appropriate
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Contact parents/guardians
+                    </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">NO</span>
+</div>
+<div class="decision-node">
+                        Is this a safeguarding concern?
+                    </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">YES</span>
+</div>
+<div class="action-node">
+                                Report to Designated Safeguarding Lead immediately
+                            </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">NO</span>
+</div>
+<div class="decision-node">
+                                Is this a mental health concern?
+                            </div>
+</div>
+</div>
+</div>
+</div>
+<div class="arrow"></div>
+<div class="decision-node">
+                Can you address this within your role as a boarding tutor?
+            </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">YES</span>
+</div>
+<div class="action-node">
+                        Have a supportive conversation with the student
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Implement appropriate support strategies
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Document concern and actions taken
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Monitor and follow up
+                    </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">NO</span>
+</div>
+<div class="action-node">
+                        Refer to appropriate support service (counselor, nurse, etc.)
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Inform House Parent/Head of Boarding
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Document concern and referral
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Follow up to ensure support is provided
+                    </div>
+</div>
+</div>
+<div class="arrow"></div>
+<div class="decision-node">
+                Has the concern been adequately addressed?
+            </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">YES</span>
+</div>
+<div class="action-node">
+                        Continue monitoring as needed
+                    </div>
+<div class="arrow"></div>
+<div class="start-end-node">
+<strong>END:</strong> Document resolution
+                    </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">NO</span>
+</div>
+<div class="action-node">
+                        Escalate to senior staff
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Consider parent/guardian meeting
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Develop comprehensive support plan
+                    </div>
+</div>
+</div>
+</div>
+<div class="notes">
+<strong>Notes:</strong>
+<ul>
+<li>Always prioritize student safety and wellbeing</li>
+<li>Document all concerns and actions taken</li>
+<li>Maintain appropriate confidentiality while following safeguarding procedures</li>
+<li>Consult your school's specific policies for detailed guidance</li>
+</ul>
+</div>
+</div>
+<div class="flowchart-section">
+<h2>2. Behavioral Incident Response</h2>
+<p>This flowchart guides boarding tutors through the process of responding to behavioral incidents in the boarding house.</p>
+<div class="flowchart">
+<div class="start-end-node">
+<strong>START:</strong> Behavioral incident occurs
+            </div>
+<div class="arrow"></div>
+<div class="decision-node">
+                Is there immediate risk to safety?
+            </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">YES</span>
+</div>
+<div class="action-node">
+                        Intervene immediately to ensure safety
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Call for assistance if needed
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Separate involved students
+                    </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">NO</span>
+</div>
+<div class="action-node">
+                        Calmly address the behavior
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Move to a private space if appropriate
+                    </div>
+</div>
+</div>
+<div class="arrow"></div>
+<div class="decision-node">
+                What is the severity of the incident?
+            </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">MINOR</span>
+</div>
+<div class="action-node">
+                        Address with the student directly
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Apply appropriate consequences per house rules
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Document incident
+                    </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">MAJOR</span>
+</div>
+<div class="action-node">
+                        Report to House Parent/Head of Boarding
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Complete detailed incident report
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Participate in formal disciplinary process
+                    </div>
+</div>
+</div>
+<div class="arrow"></div>
+<div class="decision-node">
+                Does this incident indicate a pattern of behavior?
+            </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">YES</span>
+</div>
+<div class="action-node">
+                        Review previous incidents and responses
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Develop behavior management plan
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Consider parent/guardian meeting
+                    </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">NO</span>
+</div>
+<div class="action-node">
+                        Monitor for future incidents
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Provide guidance on expected behavior
+                    </div>
+</div>
+</div>
+<div class="arrow"></div>
+<div class="action-node">
+                Follow up with all involved students
+            </div>
+<div class="arrow"></div>
+<div class="action-node">
+                Implement restorative practices if appropriate
+            </div>
+<div class="arrow"></div>
+<div class="start-end-node">
+<strong>END:</strong> Document resolution
+            </div>
+</div>
+<div class="notes">
+<strong>Notes:</strong>
+<ul>
+<li>Always remain calm and professional when addressing behavioral incidents</li>
+<li>Focus on the behavior, not the student's character</li>
+<li>Consider cultural differences and individual circumstances</li>
+<li>Ensure consequences are fair, consistent, and proportionate</li>
+<li>Use incidents as opportunities for student growth and learning</li>
+</ul>
+</div>
+</div>
+<div class="flowchart-section">
+<h2>3. Academic Support Decision Tree</h2>
+<p>This decision tree helps boarding tutors determine appropriate academic support strategies for students.</p>
+<div class="flowchart">
+<div class="start-end-node">
+<strong>START:</strong> Student academic concern identified
+            </div>
+<div class="arrow"></div>
+<div class="decision-node">
+                What type of academic concern is it?
+            </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">PERFORMANCE</span>
+</div>
+<div class="decision-node">
+                        Is it subject-specific or across multiple subjects?
+                    </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">SPECIFIC</span>
+</div>
+<div class="action-node">
+                                Arrange subject-specific support
+                            </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">MULTIPLE</span>
+</div>
+<div class="action-node">
+                                Investigate broader learning needs
+                            </div>
+</div>
+</div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">ENGAGEMENT</span>
+</div>
+<div class="decision-node">
+                        Is it motivation or understanding?
+                    </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">MOTIVATION</span>
+</div>
+<div class="action-node">
+                                Explore interests and goals
+                            </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">UNDERSTANDING</span>
+</div>
+<div class="action-node">
+                                Identify knowledge gaps
+                            </div>
+</div>
+</div>
+</div>
+</div>
+<div class="arrow"></div>
+<div class="decision-node">
+                What level of support is needed?
+            </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">LIGHT</span>
+</div>
+<div class="action-node">
+                        Provide guidance during study time
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Check in regularly on progress
+                    </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">MODERATE</span>
+</div>
+<div class="action-node">
+                        Schedule regular tutoring sessions
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Develop structured study plan
+                    </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">INTENSIVE</span>
+</div>
+<div class="action-node">
+                        Refer to learning support department
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Consider formal assessment
+                    </div>
+</div>
+</div>
+<div class="arrow"></div>
+<div class="action-node">
+                Implement support strategy
+            </div>
+<div class="arrow"></div>
+<div class="action-node">
+                Monitor progress and adjust as needed
+            </div>
+<div class="arrow"></div>
+<div class="decision-node">
+                Is the support strategy effective?
+            </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">YES</span>
+</div>
+<div class="action-node">
+                        Continue with current approach
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Gradually reduce support as appropriate
+                    </div>
+<div class="arrow"></div>
+<div class="start-end-node">
+<strong>END:</strong> Document success
+                    </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">NO</span>
+</div>
+<div class="action-node">
+                        Reassess needs and adjust strategy
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Consult with academic staff
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Return to "What level of support is needed?"
+                    </div>
+</div>
+</div>
+</div>
+<div class="notes">
+<strong>Notes:</strong>
+<ul>
+<li>Focus on building student independence and self-regulation</li>
+<li>Regularly communicate with subject teachers</li>
+<li>Consider learning styles and preferences</li>
+<li>Document strategies used and their effectiveness</li>
+<li>Celebrate progress and improvements</li>
+</ul>
+</div>
+</div>
+<div class="flowchart-section">
+<h2>4. Homesickness Response Protocol</h2>
+<p>This flowchart guides boarding tutors through supporting students experiencing homesickness.</p>
+<div class="flowchart">
+<div class="start-end-node">
+<strong>START:</strong> Student shows signs of homesickness
+            </div>
+<div class="arrow"></div>
+<div class="decision-node">
+                How severe are the symptoms?
+            </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">MILD</span>
+</div>
+<div class="action-node">
+                        Acknowledge feelings and normalize experience
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Encourage participation in house activities
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Facilitate regular communication with family
+                    </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">SEVERE</span>
+</div>
+<div class="action-node">
+                        Schedule one-on-one supportive conversation
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Inform House Parent/Head of Boarding
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Consider counselor referral
+                    </div>
+</div>
+</div>
+<div class="arrow"></div>
+<div class="decision-node">
+                Is this affecting daily functioning?
+            </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">YES</span>
+</div>
+<div class="action-node">
+                        Develop structured support plan
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Contact parents/guardians
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Consider temporary adjustments to routine
+                    </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">NO</span>
+</div>
+<div class="action-node">
+                        Monitor and provide regular check-ins
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Encourage peer connections
+                    </div>
+</div>
+</div>
+<div class="arrow"></div>
+<div class="action-node">
+                Implement coping strategies
+            </div>
+<div class="arrow"></div>
+<div class="action-node">
+                Create comfort items/routines
+            </div>
+<div class="arrow"></div>
+<div class="decision-node">
+                Is the student adapting?
+            </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">YES</span>
+</div>
+<div class="action-node">
+                        Continue gradual integration
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Celebrate progress
+                    </div>
+<div class="arrow"></div>
+<div class="start-end-node">
+<strong>END:</strong> Monitor occasionally
+                    </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">NO</span>
+</div>
+<div class="action-node">
+                        Escalate to senior staff
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Consider family meeting
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Evaluate if boarding is appropriate
+                    </div>
+</div>
+</div>
+</div>
+<div class="notes">
+<strong>Notes:</strong>
+<ul>
+<li>Homesickness is normal and usually temporary</li>
+<li>Avoid suggesting that the student can "go home if it doesn't work out"</li>
+<li>Focus on building connections within the boarding community</li>
+<li>Be patient and empathetic while encouraging resilience</li>
+<li>Watch for signs of depression or anxiety that may require professional support</li>
+</ul>
+</div>
+</div>
+<div class="flowchart-section">
+<h2>5. Conflict Resolution Process</h2>
+<p>This flowchart outlines the process for resolving conflicts between boarding students.</p>
+<div class="flowchart">
+<div class="start-end-node">
+<strong>START:</strong> Conflict between students identified
+            </div>
+<div class="arrow"></div>
+<div class="decision-node">
+                Is there immediate risk of harm?
+            </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">YES</span>
+</div>
+<div class="action-node">
+                        Intervene immediately to ensure safety
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Separate students
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Report to senior staff
+                    </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">NO</span>
+</div>
+<div class="decision-node">
+                        What is the nature of the conflict?
+                    </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">MINOR</span>
+</div>
+<div class="action-node">
+                                Facilitate immediate discussion
+                            </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">SIGNIFICANT</span>
+</div>
+<div class="action-node">
+                                Schedule formal mediation
+                            </div>
+</div>
+</div>
+</div>
+</div>
+<div class="arrow"></div>
+<div class="action-node">
+                Listen to each student's perspective separately
+            </div>
+<div class="arrow"></div>
+<div class="action-node">
+                Identify underlying issues
+            </div>
+<div class="arrow"></div>
+<div class="decision-node">
+                Are both parties willing to resolve the conflict?
+            </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">YES</span>
+</div>
+<div class="action-node">
+                        Bring students together for mediated discussion
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Establish ground rules for discussion
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Guide students to find mutual resolution
+                    </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">NO</span>
+</div>
+<div class="action-node">
+                        Implement separation strategies
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Involve House Parent/Head of Boarding
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Consider disciplinary action if appropriate
+                    </div>
+</div>
+</div>
+<div class="arrow"></div>
+<div class="action-node">
+                Document the conflict and resolution
+            </div>
+<div class="arrow"></div>
+<div class="action-node">
+                Follow up with both parties separately
+            </div>
+<div class="arrow"></div>
+<div class="decision-node">
+                Has the conflict been resolved?
+            </div>
+<div class="branch">
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label">YES</span>
+</div>
+<div class="action-node">
+                        Monitor relationship
+                    </div>
+<div class="arrow"></div>
+<div class="start-end-node">
+<strong>END:</strong> Document resolution
+                    </div>
+</div>
+<div class="branch-item">
+<div class="arrow">
+<span class="arrow-label right">NO</span>
+</div>
+<div class="action-node">
+                        Escalate to senior staff
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Consider parent involvement
+                    </div>
+<div class="arrow"></div>
+<div class="action-node">
+                        Implement formal behavior management plan
+                    </div>
+</div>
+</div>
+</div>
+<div class="notes">
+<strong>Notes:</strong>
+<ul>
+<li>Remain neutral and avoid taking sides</li>
+<li>Focus on behaviors and feelings, not blame</li>
+<li>Teach conflict resolution skills throughout the process</li>
+<li>Consider cultural differences that may impact conflict resolution</li>
+<li>Use conflicts as opportunities for social-emotional learning</li>
+</ul>
+</div>
+</div>
+<div class="footer">
+<p>Boarding Tutor Reference Guide | Flowcharts and Decision Trees | Page 1 of 1</p>
+<p>These flowcharts should be used in conjunction with your school's specific policies and procedures.</p>
+</div>
+</body>
+</html>
