@@ -1,0 +1,8 @@
+.table-of-contents ul {
+    margin-left: 1.5rem;
+    list-style-type: disc;
+}
+
+.table-of-contents li {
+    margin-bottom: 0.75rem;
+}

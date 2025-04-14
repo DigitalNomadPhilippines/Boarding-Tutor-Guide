@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Operational Checklist | Boarding Tutor Reference Guide</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c5282;
+            text-align: center;
+            border-bottom: 2px solid #2c5282;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c5282;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        .form-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"], 
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        textarea {
+            height: 80px;
+        }
+        .instructions {
+            background-color: #e6f7ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2c5282;
+        }
+        .signature-field {
+            margin-top: 20px;
+            border-top: 1px dotted #999;
+            padding-top: 10px;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #666;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        .checklist-item:hover {
+            background-color: #f0f0f0;
+        }
+        .checklist-item input[type="checkbox"] {
+            margin-right: 15px;
+            transform: scale(1.2);
+        }
+        .checklist-item label {
+            display: inline;
+            font-weight: normal;
+            flex-grow: 1;
+        }
+        .checklist-section {
+            margin-bottom: 20px;
+        }
+        .checklist-section h3 {
+            color: #2c5282;
+            margin-bottom: 15px;
+        }
+        .emergency-contacts {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        .emergency-contacts h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+        .emergency-contacts ul {
+            margin-bottom: 0;
+        }
+        @media print {
+            body {
+                padding: 0;
+                font-size: 12pt;
+            }
+            .instructions {
+                display: none;
+            }
+            .form-section {
+                break-inside: avoid;
+            }
+            .checklist-item {
+                break-inside: avoid;
+            }
+        }
+    </style>
+<style>
+        .download-options {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .download-button:hover {
+            transform: translateY(-2px);
+        }
+        .download-button i {
+            margin-right: 8px;
+        }
+        .download-button.pdf {
+            background-color: #f40f02;
+            color: white;
+        }
+        .download-button.pdf:hover {
+            background-color: #d00c01;
+        }
+        .download-button.word {
+            background-color: #2b579a;
+            color: white;
+        }
+        .download-button.word:hover {
+            background-color: #1e3f6f;
+        }
+        </style><script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6423058095388490"></script></head>
+<body>
+<div class="instructions">
+<h3>Operational Checklist Instructions</h3>
+<p>This checklist is designed to help boarding tutors ensure all essential operational tasks are completed. Use this form regularly to maintain consistency and ensure all aspects of boarding house operations are properly managed.</p>
+<p><strong>Important:</strong> Complete all sections and report any issues or concerns to the appropriate staff member immediately.</p>
+</div>
+<h1>Boarding House Operational Checklist</h1>
+<div class="form-section">
+<h2>Basic Information</h2>
+<div class="form-group">
+<label for="date">Date:</label>
+<input id="date" name="date" type="date"/>
+</div>
+<div class="form-group">
+<label for="boarding-house">Boarding House:</label>
+<input id="boarding-house" name="boarding-house" type="text"/>
+</div>
+<div class="form-group">
+<label for="completed-by">Completed By:</label>
+<input id="completed-by" name="completed-by" type="text"/>
+</div>
+<div class="form-group">
+<label for="review-period">Review Period:</label>
+<select id="review-period" name="review-period">
+<option value="daily">Daily</option>
+<option value="weekly">Weekly</option>
+<option value="monthly">Monthly</option>
+<option value="term-start">Term Start</option>
+<option value="term-end">Term End</option>
+</select>
+</div>
+</div>
+<div class="form-section">
+<h2>Daily Operations</h2>
+<div class="checklist-section">
+<h3>Attendance and Student Monitoring</h3>
+<div class="checklist-item">
+<input id="morning-attendance" name="morning-attendance" type="checkbox"/>
+<label for="morning-attendance">Morning attendance completed and recorded</label>
+</div>
+<div class="checklist-item">
+<input id="evening-attendance" name="evening-attendance" type="checkbox"/>
+<label for="evening-attendance">Evening attendance completed and recorded</label>
+</div>
+<div class="checklist-item">
+<input id="absences-followed" name="absences-followed" type="checkbox"/>
+<label for="absences-followed">All absences followed up and documented</label>
+</div>
+<div class="checklist-item">
+<input id="leave-arrangements" name="leave-arrangements" type="checkbox"/>
+<label for="leave-arrangements">Leave arrangements verified and recorded</label>
+</div>
+<div class="checklist-item">
+<input id="student-concerns" name="student-concerns" type="checkbox"/>
+<label for="student-concerns">Student concerns documented and communicated</label>
+</div>
+<div class="form-group">
+<label for="attendance-notes">Attendance Notes:</label>
+<textarea id="attendance-notes" name="attendance-notes" placeholder="Note any attendance issues or concerns"></textarea>
+</div>
+</div>
+<div class="checklist-section">
+<h3>Health and Wellbeing</h3>
+<div class="checklist-item">
+<input id="medical-needs" name="medical-needs" type="checkbox"/>
+<label for="medical-needs">Student medical needs attended to</label>
+</div>
+<div class="checklist-item">
+<input id="medication-administered" name="medication-administered" type="checkbox"/>
+<label for="medication-administered">Required medications administered and logged</label>
+</div>
+<div class="checklist-item">
+<input id="health-center-visits" name="health-center-visits" type="checkbox"/>
+<label for="health-center-visits">Health center visits recorded</label>
+</div>
+<div class="checklist-item">
+<input id="wellbeing-checks" name="wellbeing-checks" type="checkbox"/>
+<label for="wellbeing-checks">Student wellbeing checks completed</label>
+</div>
+<div class="form-group">
+<label for="health-notes">Health and Wellbeing Notes:</label>
+<textarea id="health-notes" name="health-notes" placeholder="Note any health or wellbeing issues or concerns"></textarea>
+</div>
+</div>
+<div class="checklist-section">
+<h3>Facilities and Security</h3>
+<div class="checklist-item">
+<input id="building-inspection" name="building-inspection" type="checkbox"/>
+<label for="building-inspection">Building inspection completed</label>
+</div>
+<div class="checklist-item">
+<input id="security-checks" name="security-checks" type="checkbox"/>
+<label for="security-checks">Security checks completed (doors, windows, etc.)</label>
+</div>
+<div class="checklist-item">
+<input id="maintenance-issues" name="maintenance-issues" type="checkbox"/>
+<label for="maintenance-issues">Maintenance issues identified and reported</label>
+</div>
+<div class="checklist-item">
+<input id="cleaning-standards" name="cleaning-standards" type="checkbox"/>
+<label for="cleaning-standards">Cleaning standards maintained</label>
+</div>
+<div class="form-group">
+<label for="facilities-notes">Facilities and Security Notes:</label>
+<textarea id="facilities-notes" name="facilities-notes" placeholder="Note any facilities or security issues or concerns"></textarea>
+</div>
+</div>
+<div class="checklist-section">
+<h3>Communication and Documentation</h3>
+<div class="checklist-item">
+<input id="staff-handover" name="staff-handover" type="checkbox"/>
+<label for="staff-handover">Staff handover completed</label>
+</div>
+<div class="checklist-item">
+<input id="incident-reports" name="incident-reports" type="checkbox"/>
+<label for="incident-reports">Incident reports completed (if applicable)</label>
+</div>
+<div class="checklist-item">
+<input id="parent-communication" name="parent-communication" type="checkbox"/>
+<label for="parent-communication">Parent communications logged</label>
+</div>
+<div class="checklist-item">
+<input id="daily-log" name="daily-log" type="checkbox"/>
+<label for="daily-log">Daily log updated</label>
+</div>
+<div class="form-group">
+<label for="communication-notes">Communication and Documentation Notes:</label>
+<textarea id="communication-notes" name="communication-notes" placeholder="Note any communication or documentation issues or concerns"></textarea>
+</div>
+</div>
+</div>
+<div class="form-section">
+<h2>Weekly Operations</h2>
+<div class="checklist-section">
+<h3>Student Support</h3>
+<div class="checklist-item">
+<input id="academic-monitoring" name="academic-monitoring" type="checkbox"/>
+<label for="academic-monitoring">Academic progress monitored</label>
+</div>
+<div class="checklist-item">
+<input id="tutor-meetings" name="tutor-meetings" type="checkbox"/>
+<label for="tutor-meetings">Individual tutor meetings conducted</label>
+</div>
+<div class="checklist-item">
+<input id="activity-participation" name="activity-participation" type="checkbox"/>
+<label for="activity-participation">Activity participation tracked</label>
+</div>
+<div class="checklist-item">
+<input id="behavior-monitoring" name="behavior-monitoring" type="checkbox"/>
+<label for="behavior-monitoring">Behavior monitoring and follow-up completed</label>
+</div>
+<div class="form-group">
+<label for="student-support-notes">Student Support Notes:</label>
+<textarea id="student-support-notes" name="student-support-notes" placeholder="Note any student support issues or concerns"></textarea>
+</div>
+</div>
+<div class="checklist-section">
+<h3>House Management</h3>
+<div class="checklist-item">
+<input id="house-meeting" name="house-meeting" type="checkbox"/>
+<label for="house-meeting">House meeting conducted</label>
+</div>
+<div class="checklist-item">
+<input id="room-inspections" name="room-inspections" type="checkbox"/>
+<label for="room-inspections">Room inspections completed</label>
+</div>
+<div class="checklist-item">
+<input id="weekend-activities" name="weekend-activities" type="checkbox"/>
+<label for="weekend-activities">Weekend activities planned and communicated</label>
+</div>
+<div class="checklist-item">
+<input id="staff-rota" name="staff-rota" type="checkbox"/>
+<label for="staff-rota">Staff duty rota confirmed</label>
+</div>
+<div class="form-group">
+<label for="house-management-notes">House Management Notes:</label>
+<textarea id="house-management-notes" name="house-management-notes" placeholder="Note any house management issues or concerns"></textarea>
+</div>
+</div>
+</div>
+<div class="form-section">
+<h2>Monthly Operations</h2>
+<div class="checklist-section">
+<h3>Administrative Tasks</h3>
+<div class="checklist-item">
+<input id="budget-review" name="budget-review" type="checkbox"/>
+<label for="budget-review">House budget reviewed</label>
+</div>
+<div class="checklist-item">
+<input id="staff-meeting" name="staff-meeting" type="checkbox"/>
+<label for="staff-meeting">House staff meeting conducted</label>
+</div>
+<div class="checklist-item">
+<input id="parent-reports" name="parent-reports" type="checkbox"/>
+<label for="parent-reports">Parent reports/communications completed</label>
+</div>
+<div class="checklist-item">
+<input id="student-records" name="student-records" type="checkbox"/>
+<label for="student-records">Student records updated</label>
+</div>
+<div class="form-group">
+<label for="administrative-notes">Administrative Notes:</label>
+<textarea id="administrative-notes" name="administrative-notes" placeholder="Note any administrative issues or concerns"></textarea>
+</div>
+</div>
+<div class="checklist-section">
+<h3>Facilities Management</h3>
+<div class="checklist-item">
+<input id="maintenance-review" name="maintenance-review" type="checkbox"/>
+<label for="maintenance-review">Maintenance issues reviewed and followed up</label>
+</div>
+<div class="checklist-item">
+<input id="equipment-check" name="equipment-check" type="checkbox"/>
+<label for="equipment-check">Equipment inventory and condition checked</label>
+</div>
+<div class="checklist-item">
+<input id="safety-inspection" name="safety-inspection" type="checkbox"/>
+<label for="safety-inspection">Safety equipment inspected</label>
+</div>
+<div class="checklist-item">
+<input id="deep-cleaning" name="deep-cleaning" type="checkbox"/>
+<label for="deep-cleaning">Deep cleaning schedule reviewed</label>
+</div>
+<div class="form-group">
+<label for="facilities-management-notes">Facilities Management Notes:</label>
+<textarea id="facilities-management-notes" name="facilities-management-notes" placeholder="Note any facilities management issues or concerns"></textarea>
+</div>
+</div>
+</div>
+<div class="form-section">
+<h2>Term Start Operations</h2>
+<div class="checklist-section">
+<h3>Preparation</h3>
+<div class="checklist-item">
+<input id="room-allocations" name="room-allocations" type="checkbox"/>
+<label for="room-allocations">Room allocations finalized</label>
+</div>
+<div class="checklist-item">
+<input id="welcome-packs" name="welcome-packs" type="checkbox"/>
+<label for="welcome-packs">Welcome packs prepared</label>
+</div>
+<div class="checklist-item">
+<input id="staff-briefing" name="staff-briefing" type="checkbox"/>
+<label for="staff-briefing">Staff briefing conducted</label>
+</div>
+<div class="checklist-item">
+<input id="student-information" name="student-information" type="checkbox"/>
+<label for="student-information">Student information updated</label>
+</div>
+<div class="form-group">
+<label for="preparation-notes">Preparation Notes:</label>
+<textarea id="preparation-notes" name="preparation-notes" placeholder="Note any preparation issues or concerns"></textarea>
+</div>
+</div>
+<div class="checklist-section">
+<h3>Arrival and Induction</h3>
+<div class="checklist-item">
+<input id="arrival-schedule" name="arrival-schedule" type="checkbox"/>
+<label for="arrival-schedule">Arrival schedule communicated</label>
+</div>
+<div class="checklist-item">
+<input id="induction-program" name="induction-program" type="checkbox"/>
+<label for="induction-program">Induction program prepared</label>
+</div>
+<div class="checklist-item">
+<input id="new-student-support" name="new-student-support" type="checkbox"/>
+<label for="new-student-support">New student support plan in place</label>
+</div>
+<div class="checklist-item">
+<input id="parent-communication-plan" name="parent-communication-plan" type="checkbox"/>
+<label for="parent-communication-plan">Parent communication plan established</label>
+</div>
+<div class="form-group">
+<label for="arrival-notes">Arrival and Induction Notes:</label>
+<textarea id="arrival-notes" name="arrival-notes" placeholder="Note any arrival or induction issues or concerns"></textarea>
+</div>
+</div>
+</div>
+<div class="form-section">
+<h2>Term End Operations</h2>
+<div class="checklist-section">
+<h3>Departure Procedures</h3>
+<div class="checklist-item">
+<input id="departure-schedule" name="departure-schedule" type="checkbox"/>
+<label for="departure-schedule">Departure schedule communicated</label>
+</div>
+<div class="checklist-item">
+<input id="travel-arrangements" name="travel-arrangements" type="checkbox"/>
+<label for="travel-arrangements">Travel arrangements confirmed</label>
+</div>
+<div class="checklist-item">
+<input id="room-clearance" name="room-clearance" type="checkbox"/>
+<label for="room-clearance">Room clearance procedures completed</label>
+</div>
+<div class="checklist-item">
+<input id="storage-arrangements" name="storage-arrangements" type="checkbox"/>
+<label for="storage-arrangements">Storage arrangements finalized</label>
+</div>
+<div class="form-group">
+<label for="departure-notes">Departure Notes:</label>
+<textarea id="departure-notes" name="departure-notes" placeholder="Note any departure issues or concerns"></textarea>
+</div>
+</div>
+<div class="checklist-section">
+<h3>End of Term Administration</h3>
+<div class="checklist-item">
+<input id="term-reports" name="term-reports" type="checkbox"/>
+<label for="term-reports">Term reports completed</label>
+</div>
+<div class="checklist-item">
+<input id="student-progress-review" name="student-progress-review" type="checkbox"/>
+<label for="student-progress-review">Student progress review completed</label>
+</div>
+<div class="checklist-item">
+<input id="inventory-check" name="inventory-check" type="checkbox"/>
+<label for="inventory-check">House inventory check completed</label>
+</div>
+<div class="checklist-item">
+<input id="maintenance-requests" name="maintenance-requests" type="checkbox"/>
+<label for="maintenance-requests">Maintenance requests for holiday period submitted</label>
+</div>
+<div class="form-group">
+<label for="end-of-term-notes">End of Term Notes:</label>
+<textarea id="end-of-term-notes" name="end-of-term-notes" placeholder="Note any end of term issues or concerns"></textarea>
+</div>
+</div>
+</div>
+<div class="form-section">
+<h2>Additional Notes</h2>
+<div class="form-group">
+<label for="additional-notes">Any Other Relevant Information:</label>
+<textarea id="additional-notes" name="additional-notes" placeholder="Include any other information that is important for house operations"></textarea>
+</div>
+</div>
+<div class="form-section">
+<h2>Action Items</h2>
+<div class="form-group">
+<label for="action-items">Actions Required:</label>
+<textarea id="action-items" name="action-items" placeholder="List any actions that need to be taken based on this checklist"></textarea>
+</div>
+</div>
+<div class="form-section">
+<h2>Completion</h2>
+<div class="form-group">
+<label for="completion-date">Date Completed:</label>
+<input id="completion-date" name="completion-date" type="date"/>
+</div>
+<div class="form-group">
+<label for="signature">Signature:</label>
+<div class="signature-field">
+<p>_______________________________</p>
+</div>
+</div>
+<div class="form-group">
+<label for="reviewed-by">Reviewed By:</label>
+<input id="reviewed-by" name="reviewed-by" type="text"/>
+</div>
+<div class="form-group">
+<label for="review-date">Review Date:</label>
+<input id="review-date" name="review-date" type="date"/>
+</div>
+<div class="form-group">
+<label for="reviewer-signature">Reviewer Signature:</label>
+<div class="signature-field">
+<p>_______________________________</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>Boarding Tutor Reference Guide | Operational Checklist | Page 1 of 1</p>
+<p>This checklist should be completed according to the specified review period and filed according to school policy.</p>
+</div>
+</body>
+</html>

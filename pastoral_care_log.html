@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pastoral Care Log | Boarding Tutor Reference Guide</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c5282;
+            text-align: center;
+            border-bottom: 2px solid #2c5282;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c5282;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        .form-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"], 
+        input[type="date"],
+        input[type="time"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        textarea {
+            height: 100px;
+        }
+        .checkbox-group {
+            margin-top: 10px;
+        }
+        .checkbox-item {
+            margin-bottom: 5px;
+        }
+        .checkbox-item input {
+            margin-right: 10px;
+        }
+        .instructions {
+            background-color: #e6f7ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2c5282;
+        }
+        .signature-field {
+            margin-top: 20px;
+            border-top: 1px dotted #999;
+            padding-top: 10px;
+        }
+        .date-field {
+            display: inline-block;
+            margin-left: 50px;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #666;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .confidentiality-notice {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        @media print {
+            body {
+                padding: 0;
+                font-size: 12pt;
+            }
+            .instructions {
+                display: none;
+            }
+            .form-section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+<style>
+        .download-options {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .download-button:hover {
+            transform: translateY(-2px);
+        }
+        .download-button i {
+            margin-right: 8px;
+        }
+        .download-button.pdf {
+            background-color: #f40f02;
+            color: white;
+        }
+        .download-button.pdf:hover {
+            background-color: #d00c01;
+        }
+        .download-button.word {
+            background-color: #2b579a;
+            color: white;
+        }
+        .download-button.word:hover {
+            background-color: #1e3f6f;
+        }
+        </style><script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6423058095388490"></script></head>
+<body>
+<div class="instructions">
+<h3>Pastoral Care Log Instructions</h3>
+<p>This log is designed to document ongoing pastoral care interactions and student wellbeing. Complete a new entry for each significant interaction or observation.</p>
+<p><strong>Confidentiality Notice:</strong> Information recorded in this log is confidential and should only be shared with appropriate staff members on a need-to-know basis in accordance with the school's confidentiality policy.</p>
+</div>
+<h1>Pastoral Care Log</h1>
+<div class="form-section">
+<h2>Student Information</h2>
+<div class="form-group">
+<label for="student-name">Student Name:</label>
+<input id="student-name" name="student-name" type="text"/>
+</div>
+<div class="form-group">
+<label for="year-group">Year Group/Grade:</label>
+<input id="year-group" name="year-group" type="text"/>
+</div>
+<div class="form-group">
+<label for="boarding-house">Boarding House:</label>
+<input id="boarding-house" name="boarding-house" type="text"/>
+</div>
+<div class="form-group">
+<label for="tutor-name">Boarding Tutor Name:</label>
+<input id="tutor-name" name="tutor-name" type="text"/>
+</div>
+</div>
+<div class="form-section">
+<h2>Interaction Details</h2>
+<div class="form-group">
+<label for="interaction-date">Date of Interaction:</label>
+<input id="interaction-date" name="interaction-date" type="date"/>
+</div>
+<div class="form-group">
+<label for="interaction-time">Time of Interaction:</label>
+<input id="interaction-time" name="interaction-time" type="time"/>
+</div>
+<div class="form-group">
+<label for="interaction-location">Location:</label>
+<input id="interaction-location" name="interaction-location" placeholder="e.g., Boarding house, Dining hall, etc." type="text"/>
+</div>
+<div class="form-group">
+<label for="interaction-type">Nature of Interaction:</label>
+<select id="interaction-type" name="interaction-type">
+<option value="">Please select</option>
+<option value="scheduled">Scheduled meeting</option>
+<option value="student-initiated">Student-initiated conversation</option>
+<option value="tutor-initiated">Tutor-initiated conversation</option>
+<option value="observation">Observation of behavior/wellbeing</option>
+<option value="group-activity">Group activity or discussion</option>
+<option value="parent-communication">Parent communication follow-up</option>
+<option value="other">Other (please specify below)</option>
+</select>
+</div>
+<div class="form-group">
+<label for="interaction-other">If 'Other', please specify:</label>
+<input id="interaction-other" name="interaction-other" type="text"/>
+</div>
+</div>
+<div class="form-section">
+<h2>Content of Interaction</h2>
+<div class="form-group">
+<label for="topics-discussed">Key Topics Discussed or Concerns Raised:</label>
+<textarea id="topics-discussed" name="topics-discussed" placeholder="Provide a factual summary of the main points discussed or concerns raised"></textarea>
+</div>
+<div class="form-group">
+<label>Areas of Discussion (check all that apply):</label>
+<div class="checkbox-group">
+<div class="checkbox-item">
+<input id="academic" name="discussion-areas" type="checkbox" value="academic"/>
+<label for="academic">Academic progress or concerns</label>
+</div>
+<div class="checkbox-item">
+<input id="social" name="discussion-areas" type="checkbox" value="social"/>
+<label for="social">Social relationships or peer issues</label>
+</div>
+<div class="checkbox-item">
+<input id="emotional" name="discussion-areas" type="checkbox" value="emotional"/>
+<label for="emotional">Emotional wellbeing</label>
+</div>
+<div class="checkbox-item">
+<input id="behavioral" name="discussion-areas" type="checkbox" value="behavioral"/>
+<label for="behavioral">Behavioral concerns</label>
+</div>
+<div class="checkbox-item">
+<input id="health" name="discussion-areas" type="checkbox" value="health"/>
+<label for="health">Physical health or medical issues</label>
+</div>
+<div class="checkbox-item">
+<input id="family" name="discussion-areas" type="checkbox" value="family"/>
+<label for="family">Family matters</label>
+</div>
+<div class="checkbox-item">
+<input id="homesickness" name="discussion-areas" type="checkbox" value="homesickness"/>
+<label for="homesickness">Homesickness</label>
+</div>
+<div class="checkbox-item">
+<input id="extracurricular" name="discussion-areas" type="checkbox" value="extracurricular"/>
+<label for="extracurricular">Extracurricular activities</label>
+</div>
+<div class="checkbox-item">
+<input id="future-plans" name="discussion-areas" type="checkbox" value="future-plans"/>
+<label for="future-plans">Future plans or aspirations</label>
+</div>
+<div class="checkbox-item">
+<input id="other-area" name="discussion-areas" type="checkbox" value="other-area"/>
+<label for="other-area">Other (please specify below)</label>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label for="other-area-details">If 'Other', please specify:</label>
+<input id="other-area-details" name="other-area-details" type="text"/>
+</div>
+</div>
+<div class="form-section">
+<h2>Observations and Assessment</h2>
+<div class="form-group">
+<label for="wellbeing-observations">Observations of Student Wellbeing:</label>
+<textarea id="wellbeing-observations" name="wellbeing-observations" placeholder="Note any observations about the student's mood, appearance, behavior, or other indicators of wellbeing"></textarea>
+</div>
+<div class="form-group">
+<label for="wellbeing-rating">Overall Wellbeing Assessment:</label>
+<select id="wellbeing-rating" name="wellbeing-rating">
+<option value="">Please select</option>
+<option value="excellent">Excellent - Thriving in all areas</option>
+<option value="good">Good - Generally positive with minor concerns</option>
+<option value="fair">Fair - Some concerns requiring monitoring</option>
+<option value="concerning">Concerning - Significant issues requiring intervention</option>
+<option value="critical">Critical - Immediate intervention required</option>
+</select>
+</div>
+<div class="form-group">
+<label for="assessment-notes">Additional Assessment Notes:</label>
+<textarea id="assessment-notes" name="assessment-notes" placeholder="Any additional context or interpretation of the student's situation"></textarea>
+</div>
+</div>
+<div class="form-section">
+<h2>Actions and Support</h2>
+<div class="form-group">
+<label for="actions-taken">Actions Taken or Support Provided:</label>
+<textarea id="actions-taken" name="actions-taken" placeholder="Detail what was done during or immediately after the interaction to support the student"></textarea>
+</div>
+<div class="form-group">
+<label>Type of Support Provided (check all that apply):</label>
+<div class="checkbox-group">
+<div class="checkbox-item">
+<input id="listening" name="support-type" type="checkbox" value="listening"/>
+<label for="listening">Active listening and emotional support</label>
+</div>
+<div class="checkbox-item">
+<input id="advice" name="support-type" type="checkbox" value="advice"/>
+<label for="advice">Advice or guidance</label>
+</div>
+<div class="checkbox-item">
+<input id="practical" name="support-type" type="checkbox" value="practical"/>
+<label for="practical">Practical assistance</label>
+</div>
+<div class="checkbox-item">
+<input id="academic-support" name="support-type" type="checkbox" value="academic-support"/>
+<label for="academic-support">Academic support or tutoring</label>
+</div>
+<div class="checkbox-item">
+<input id="referral" name="support-type" type="checkbox" value="referral"/>
+<label for="referral">Referral to other staff/services</label>
+</div>
+<div class="checkbox-item">
+<input id="parent-contact" name="support-type" type="checkbox" value="parent-contact"/>
+<label for="parent-contact">Parent/guardian contact</label>
+</div>
+<div class="checkbox-item">
+<input id="other-support" name="support-type" type="checkbox" value="other-support"/>
+<label for="other-support">Other (please specify below)</label>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label for="other-support-details">If 'Other', please specify:</label>
+<input id="other-support-details" name="other-support-details" type="text"/>
+</div>
+<div class="form-group">
+<label for="referrals">Referrals Made (if applicable):</label>
+<textarea id="referrals" name="referrals" placeholder="Detail any referrals made to other staff members or external services"></textarea>
+</div>
+</div>
+<div class="form-section">
+<h2>Follow-up</h2>
+<div class="form-group">
+<label for="follow-up-required">Follow-up Required:</label>
+<select id="follow-up-required" name="follow-up-required">
+<option value="">Please select</option>
+<option value="yes">Yes</option>
+<option value="no">No</option>
+<option value="maybe">Maybe - will reassess</option>
+</select>
+</div>
+<div class="form-group">
+<label for="follow-up-actions">Follow-up Actions Planned:</label>
+<textarea id="follow-up-actions" name="follow-up-actions" placeholder="Detail specific follow-up actions, who is responsible, and timeline"></textarea>
+</div>
+<div class="form-group">
+<label for="follow-up-date">Target Date for Follow-up:</label>
+<input id="follow-up-date" name="follow-up-date" type="date"/>
+</div>
+</div>
+<div class="form-section">
+<h2>Confidentiality Considerations</h2>
+<div class="form-group">
+<label for="confidentiality-level">Confidentiality Level:</label>
+<select id="confidentiality-level" name="confidentiality-level">
+<option value="">Please select</option>
+<option value="standard">Standard - Can be shared with relevant staff</option>
+<option value="sensitive">Sensitive - Limited sharing on need-to-know basis</option>
+<option value="highly-sensitive">Highly Sensitive - Restricted to minimal staff</option>
+<option value="safeguarding">Safeguarding Concern - Share with DSL only</option>
+</select>
+</div>
+<div class="form-group">
+<label for="sharing-restrictions">Specific Sharing Restrictions or Notes:</label>
+<textarea id="sharing-restrictions" name="sharing-restrictions" placeholder="Note any specific restrictions on information sharing or other confidentiality considerations"></textarea>
+</div>
+<div class="confidentiality-notice">
+<p>Remember: Information in this log must be handled in accordance with data protection regulations and the school's confidentiality policy. Share only with those who need to know to support the student effectively.</p>
+</div>
+</div>
+<div class="form-section">
+<h2>Record Completion</h2>
+<div class="form-group">
+<label for="completed-by">Log Completed By:</label>
+<input id="completed-by" name="completed-by" type="text"/>
+</div>
+<div class="form-group">
+<label for="completion-date">Date Completed:</label>
+<input id="completion-date" name="completion-date" type="date"/>
+</div>
+<div class="form-group">
+<label for="staff-signature">Staff Signature:</label>
+<div class="signature-field">
+<p>_______________________________</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>Boarding Tutor Reference Guide | Pastoral Care Log | Page 1 of 1</p>
+<p>This log forms part of the student's pastoral care record and should be stored securely.</p>
+</div>
+</body>
+</html>

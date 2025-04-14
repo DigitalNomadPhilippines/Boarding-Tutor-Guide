@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Information Form</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            background-color: #f0f0f0;
+            padding: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-check {
+            margin-bottom: 10px;
+        }
+        .form-check label {
+            margin-left: 5px;
+        }
+        .signature-section {
+            margin-top: 50px;
+        }
+        .signature-line {
+            border-top: 1px solid #000;
+            width: 250px;
+            margin-top: 70px;
+            margin-bottom: 10px;
+        }
+        .note {
+            font-style: italic;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+    </style>
+<style>
+        .download-options {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .download-button:hover {
+            transform: translateY(-2px);
+        }
+        .download-button i {
+            margin-right: 8px;
+        }
+        .download-button.pdf {
+            background-color: #f40f02;
+            color: white;
+        }
+        .download-button.pdf:hover {
+            background-color: #d00c01;
+        }
+        .download-button.word {
+            background-color: #2b579a;
+            color: white;
+        }
+        .download-button.word:hover {
+            background-color: #1e3f6f;
+        }
+        </style><script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6423058095388490"></script></head>
+<body>
+<div class="header">
+<h1>BOARDING TUTOR PAYMENT INFORMATION FORM</h1>
+<p>Confidential Financial Information</p>
+</div>
+<div class="section">
+<p>
+            Please complete this form to provide the necessary information for processing your payments. 
+            All information will be kept confidential and used solely for payment purposes.
+        </p>
+</div>
+<div class="section">
+<div class="section-title">PERSONAL INFORMATION</div>
+<div class="form-group">
+<label for="fullName">Full Name (as it appears on your bank account):</label>
+<input class="form-control" id="fullName" type="text"/>
+</div>
+<div class="form-group">
+<label for="employeeID">Employee ID/Staff Number (if assigned):</label>
+<input class="form-control" id="employeeID" type="text"/>
+</div>
+<div class="form-group">
+<label for="position">Position/Role:</label>
+<input class="form-control" id="position" type="text"/>
+</div>
+<div class="form-group">
+<label for="contactEmail">Email Address for Payment Notifications:</label>
+<input class="form-control" id="contactEmail" type="text"/>
+</div>
+<div class="form-group">
+<label for="contactPhone">Contact Phone Number:</label>
+<input class="form-control" id="contactPhone" type="text"/>
+</div>
+</div>
+<div class="section">
+<div class="section-title">PAYMENT METHOD PREFERENCE</div>
+<div class="form-group">
+<label>Preferred Payment Method:</label>
+<div class="form-check">
+<input id="directDeposit" type="checkbox"/>
+<label for="directDeposit">Direct Deposit/Bank Transfer</label>
+</div>
+<div class="form-check">
+<input id="paypal" type="checkbox"/>
+<label for="paypal">PayPal</label>
+</div>
+<div class="form-check">
+<input id="check" type="checkbox"/>
+<label for="check">Check/Cheque</label>
+</div>
+<div class="form-check">
+<input id="otherMethod" type="checkbox"/>
+<label for="otherMethod">Other (please specify):</label>
+<input class="form-control" id="otherMethodDetails" type="text"/>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">BANK ACCOUNT INFORMATION (for Direct Deposit)</div>
+<div class="form-group">
+<label for="accountHolder">Account Holder Name:</label>
+<input class="form-control" id="accountHolder" type="text"/>
+</div>
+<div class="form-group">
+<label for="bankName">Bank Name:</label>
+<input class="form-control" id="bankName" type="text"/>
+</div>
+<div class="form-group">
+<label for="accountType">Account Type:</label>
+<div class="form-check">
+<input id="checking" type="checkbox"/>
+<label for="checking">Checking/Current</label>
+</div>
+<div class="form-check">
+<input id="savings" type="checkbox"/>
+<label for="savings">Savings</label>
+</div>
+</div>
+<div class="form-group">
+<label for="accountNumber">Account Number:</label>
+<input class="form-control" id="accountNumber" type="text"/>
+</div>
+<div class="form-group">
+<label for="routingNumber">Routing/Sort Code:</label>
+<input class="form-control" id="routingNumber" type="text"/>
+</div>
+<div class="form-group">
+<label for="swiftBic">SWIFT/BIC Code (for international transfers):</label>
+<input class="form-control" id="swiftBic" type="text"/>
+</div>
+<div class="form-group">
+<label for="iban">IBAN (if applicable):</label>
+<input class="form-control" id="iban" type="text"/>
+</div>
+</div>
+<div class="section">
+<div class="section-title">PAYPAL INFORMATION (if applicable)</div>
+<div class="form-group">
+<label for="paypalEmail">PayPal Email Address:</label>
+<input class="form-control" id="paypalEmail" type="text"/>
+</div>
+</div>
+<div class="section">
+<div class="section-title">TAX INFORMATION</div>
+<div class="form-group">
+<label for="taxID">Tax Identification Number/National Insurance Number:</label>
+<input class="form-control" id="taxID" type="text"/>
+</div>
+<div class="form-group">
+<label>Tax Status:</label>
+<div class="form-check">
+<input id="employee" type="checkbox"/>
+<label for="employee">Employee</label>
+</div>
+<div class="form-check">
+<input id="contractor" type="checkbox"/>
+<label for="contractor">Independent Contractor/Self-Employed</label>
+</div>
+</div>
+<div class="form-group">
+<label for="taxCode">Tax Code (if known):</label>
+<input class="form-control" id="taxCode" type="text"/>
+</div>
+</div>
+<div class="section">
+<div class="section-title">PAYMENT SCHEDULE ACKNOWLEDGMENT</div>
+<p>I understand that payments will be processed according to the following schedule:</p>
+<div class="form-group">
+<label>Payment Frequency:</label>
+<div class="form-check">
+<input id="weekly" type="checkbox"/>
+<label for="weekly">Weekly</label>
+</div>
+<div class="form-check">
+<input id="biweekly" type="checkbox"/>
+<label for="biweekly">Bi-weekly</label>
+</div>
+<div class="form-check">
+<input id="monthly" type="checkbox"/>
+<label for="monthly">Monthly</label>
+</div>
+<div class="form-check">
+<input id="termly" type="checkbox"/>
+<label for="termly">Termly</label>
+</div>
+</div>
+<p>Payment will typically be processed on the following day(s): ___________________________</p>
+<p>I understand that I am responsible for submitting any required timesheets, invoices, or other documentation by the following deadline: ___________________________</p>
+</div>
+<div class="section">
+<div class="section-title">AUTHORIZATION</div>
+<p>I authorize the school/institution to:</p>
+<ol type="a">
+<li>Deposit my payments directly to the account specified above</li>
+<li>Make corrections to errors in deposits</li>
+<li>Withhold appropriate taxes and deductions as required by law</li>
+</ol>
+<p>I understand that it is my responsibility to:</p>
+<ol type="a">
+<li>Verify that payments have been correctly deposited</li>
+<li>Notify the finance department of any errors or changes to my banking information</li>
+<li>Provide updated information if any of my payment details change</li>
+</ol>
+</div>
+<div class="signature-section">
+<p>I confirm that the information provided above is accurate and complete.</p>
+<div class="signature-line"></div>
+<p>Signature</p>
+<div class="form-group">
+<label for="signatureDate">Date:</label>
+<input class="form-control" id="signatureDate" type="text"/>
+</div>
+</div>
+<div class="note">
+<p><strong>Privacy Notice:</strong> The information provided in this form will be used solely for the purpose of processing payments. Your data will be processed in accordance with relevant data protection legislation and will be stored securely. For more information, please refer to our Privacy Policy.</p>
+<p><strong>For Office Use Only:</strong></p>
+<p>Received by: _________________________ Date: _________________________</p>
+<p>Processed by: ________________________ Date: _________________________</p>
+</div>
+</body>
+</html>
